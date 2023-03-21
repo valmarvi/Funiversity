@@ -1,0 +1,6 @@
+package com.switchfully.domain.models;
+
+public enum Feature {
+    ADD_PROFESSOR, GET_ALL_PROFESSORS, GET_PROFESSOR_BY_ID, UPDATE_PASSWORD_BY_ID, DELETE_PROFESSOR_BY_ID,
+    ADD_COURSE, GET_ALL_COURSES
+}

@@ -24,16 +24,16 @@ public class CourseController {
         this.securityService = securityService;
     }
 
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.CREATED) //http://localhost:8080/courses
     @PostMapping(consumes = "application/json", produces = "application/json")
-    public CourseDTO addCourse(@RequestBody CourseDTO coursetoAdd, @RequestHeader String authorization) {
+    public CourseDTO addCourse(@RequestBody CourseDTO courseToAdd, @RequestHeader String authorization) {
         myLogger.info("Adding a New Course to the Database.");
         securityService.validateAuthorization(authorization, Feature.ADD_COURSE);
-        return courseService.addCourse(coursetoAdd);
+        return courseService.addCourse(courseToAdd);
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping(produces = "application/json")
+    @GetMapping(produces = "application/json") //http://localhost:8080/courses //http://localhost:8080/courses?studyPoints="studyPoints"
     public List<CourseDTO> getAllCourses(@RequestParam(required = false) Optional<Integer> studyPoints, @RequestHeader String authorization) {
         myLogger.info("Retrieving All the Courses from the Database with More Than " + studyPoints.orElse(0) + " Study Points.");
         securityService.validateAuthorization(authorization, Feature.GET_ALL_COURSES);
@@ -41,7 +41,7 @@ public class CourseController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping(produces = "application/json", path = "author") //http://digibooky.com/courses/author?id="professorId"
+    @GetMapping(produces = "application/json", path = "professor") //http://localhost:8080/courses/professor?id="professorId"
     public List<CourseDTO> getCoursesByProfessor(@RequestParam String professorId) {
         return courseService.getCoursesByProfessor(professorId);
     }

@@ -1016,3 +1016,12 @@ com.switchfully.exception.exceptions.UnknownUserException: null
 2023-03-21T21:44:02.336+01:00  INFO 17572 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1783 ms
 2023-03-21T21:44:03.904+01:00  INFO 17572 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
 2023-03-21T21:44:03.928+01:00  INFO 17572 --- [main] com.switchfully.api.ApiApplication       : Started ApiApplication in 4.21 seconds (process running for 5.099)
+2023-03-21T21:52:30.851+01:00  INFO 15096 --- [main] com.switchfully.api.ApiApplication       : Starting ApiApplication using Java 17.0.6 with PID 15096 (C:\_development\Funiversity\api\target\classes started by VVIANES in C:\_development\Funiversity)
+2023-03-21T21:52:30.856+01:00  INFO 15096 --- [main] com.switchfully.api.ApiApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-03-21T21:52:32.616+01:00  INFO 15096 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-21T21:52:32.633+01:00  INFO 15096 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-21T21:52:32.634+01:00  INFO 15096 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-21T21:52:32.785+01:00  INFO 15096 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-21T21:52:32.786+01:00  INFO 15096 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1846 ms
+2023-03-21T21:52:34.277+01:00  INFO 15096 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-03-21T21:52:34.291+01:00  INFO 15096 --- [main] com.switchfully.api.ApiApplication       : Started ApiApplication in 4.284 seconds (process running for 5.163)

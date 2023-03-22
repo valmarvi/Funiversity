@@ -45,7 +45,6 @@ public class SecurityService {
             logger.error(format("User %s does not have access to %s", usernamePassword.getUsername(), feature));
             throw new UnauthorizatedException();
         }
-
     }
 
     private UserCredentialsDTO getUsernamePassword(String authorization) {
@@ -54,5 +53,4 @@ public class SecurityService {
         String password = decodedUsernameAndPassword.substring(decodedUsernameAndPassword.indexOf(":") + 1);
         return new UserCredentialsDTO(username, password);
     }
-
 }

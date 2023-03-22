@@ -25,7 +25,7 @@ public class ProfessorController {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping(consumes = "application/json", produces = "application/json")
+    @PostMapping(consumes = "application/json", produces = "application/json") //http://localhost:8080/professors
     public ProfessorDTO addProfessor(@RequestBody ProfessorDTO professorToAdd, @RequestHeader String authorization) {
         myLogger.info("Adding a New Professor to the Database.");
         securityService.validateAuthorization(authorization, Feature.ADD_PROFESSOR);
@@ -33,7 +33,7 @@ public class ProfessorController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping(produces = "application/json")
+    @GetMapping(produces = "application/json") //http://localhost:8080/professors
     public List<ProfessorDTO> getAllProfessors(@RequestHeader String authorization) {
         myLogger.info("Retrieving All the Professors from the Database.");
         securityService.validateAuthorization(authorization, Feature.GET_ALL_PROFESSORS);
@@ -41,7 +41,7 @@ public class ProfessorController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping(produces = "application/json", path = "{id}")
+    @GetMapping(produces = "application/json", path = "{id}") //http://localhost:8080/professors/{id}
     public ProfessorDTO getProfessorById(@PathVariable String id, @RequestHeader String authorization) {
         myLogger.info("Retrieving Professor from the Database with id: " + id);
         securityService.validateAuthorization(authorization, Feature.GET_PROFESSOR_BY_ID);
@@ -49,7 +49,7 @@ public class ProfessorController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @PutMapping(consumes = "application/json", produces = "application/json", path = "{id}")
+    @PutMapping(consumes = "application/json", produces = "application/json", path = "{id}") //http://localhost:8080/professors/{id}
     public ProfessorDTO updateProfessorById(@RequestBody UpdateProfessorDTO updateProfessorDTO, @PathVariable String id, @RequestHeader String authorization) {
         myLogger.info("Updating Professor from the Database with id: " + id);
         securityService.validateAuthorization(authorization, Feature.UPDATE_PASSWORD_BY_ID);
@@ -57,7 +57,7 @@ public class ProfessorController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @DeleteMapping(path = "{id}")
+    @DeleteMapping(path = "{id}") //http://localhost:8080/professors/{id}
     public void deleteProfessorById(@PathVariable String id, @RequestHeader String authorization) {
         myLogger.info("Deleting Professor from the Database with id: " + id);
         securityService.validateAuthorization(authorization, Feature.DELETE_PROFESSOR_BY_ID);
